@@ -50,6 +50,7 @@ int Train::getLength() {
         if (tmp->light == 0) {
             return count;
         }
+        }
     }
     return 0;
 }
