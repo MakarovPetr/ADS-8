@@ -38,11 +38,11 @@ int Train::getLength() {
     Cage* tmp = first;
     int count = 0;
     while (tmp) {
-        countOp++;
         tmp = tmp->next;
+        count++;
+        countOp++;
         if (tmp->light == 0) {
-            count++;
-            //countOp++;
+            return count;
         }
         if (tmp->light == 1) {
             tmp->light = 0;
@@ -50,12 +50,10 @@ int Train::getLength() {
                 countOp++;
                 tmp = tmp->prev;
             }
-            if (tmp->light == 0)
-                return count + 1;
         }
     }
 }
 
 int Train::getOpCount() {
-    return countOp + 1;
+    return countOp;
 }
