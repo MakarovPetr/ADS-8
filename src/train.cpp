@@ -41,15 +41,14 @@ int Train::getLength() {
         tmp = tmp->next;
         count++;
         countOp++;
-        if (tmp->light == 0) {
-            return count;
-        }
         if (tmp->light == 1) {
             tmp->light = 0;
             for (int i = count; i > 0; i--) {
                 countOp++;
                 tmp = tmp->prev;
             }
+        if (tmp->light == 0) {
+            return count;
         }
     }
     return 0;
